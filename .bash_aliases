@@ -1,6 +1,6 @@
-#========== Uncomment when using WSL ===========#
+#=============== Uncomment when using WSL ===============#
 source "$HOME/dotfiles/.wsl-aliases"
-#=== Locate these commands as ~/.wsl-aliases ===#
+#=== Locate these commands as ~/dotfiles/.wsl-aliases ===#
 #alias fa='explorer.exe .' # Open Explorer
 #alias fj='cmd.exe /C start' # Open designated fileo
 #alias win='cd /mnt/c/Users/[USERNAME]'
