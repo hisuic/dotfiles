@@ -19,7 +19,7 @@
 #--------------------------------------------------------#
 source "$HOME/dotfiles/.wsl-aliases"
 alias c='code .'
-#  Locate these commands as ~/dotfiles/.wsl-aliases
+#--- Locate these commands as ~/dotfiles/.wsl-aliases ---#
 #alias fa='explorer.exe .' # Open Explorer
 #alias fj='cmd.exe /C start' # Open designated fileo
 #alias win='cd /mnt/c/Users/[USERNAME]'
