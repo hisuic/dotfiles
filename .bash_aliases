@@ -1,6 +1,4 @@
-#####################################################
-######## Uncomment when using WSL in windows ########
-#####################################################
+#======= Uncomment when using WSL in windows =======#
 source "$HOME/dotfiles/.wsl-aliases"
 
 #===== Locate these commands as ~/.wsl-aliases =====#
