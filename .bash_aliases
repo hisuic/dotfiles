@@ -1,9 +1,13 @@
 #=============== Uncomment when using WSL ===============#
 source "$HOME/dotfiles/.wsl-aliases"
+alias c='code .'
 #=== Locate these commands as ~/dotfiles/.wsl-aliases ===#
 #alias fa='explorer.exe .' # Open Explorer
 #alias fj='cmd.exe /C start' # Open designated fileo
 #alias win='cd /mnt/c/Users/[USERNAME]'
+
+#============= Uncomment when not using WSL =============#
+#alias c='codium .'
 
 # Aliases
 alias g='git'
@@ -11,7 +15,6 @@ alias gm='git commit -m '
 alias gst='git status'
 alias v='vim'
 alias V='nvim'
-alias c='code .'
 alias py='python3'
 alias cl='clear'
 
