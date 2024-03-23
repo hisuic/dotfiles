@@ -1,7 +1,8 @@
 welcome to h1ne's dotfiles
 
 if you dont have .bash_aliases
-Before running install.sh, you need to create .bash_aliases and write all your alias settings there. then call it from bashrc with following
+
+Before running install.sh, you need to create .bash_aliases and write your alias settings there. then call it from bashrc with following
 ```
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
