@@ -1,5 +1,7 @@
 # make backup directory
-mkdir ~/dotfiles/backup
+if [ ! -d "$HOME/dotfiles/backup" ]; then
+    mkdir ~/dotfiles/backup
+fi
 
 # bashrc
 if [ -f ~/.bashrc ]; then
