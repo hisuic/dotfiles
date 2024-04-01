@@ -179,3 +179,11 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# Display greeting with figlet
+current_hour=$(date +%H)
+if [ $current_hour -lt 12 ]; then
+    figlet -f smblock "Good Morning"
+else
+    figlet -f smblock "Good Afternoon"
+fi
