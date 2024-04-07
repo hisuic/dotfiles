@@ -1,3 +1,5 @@
+#!bin/bash
+
 # make backup directory
 if [ ! -d "$HOME/dotfiles/backup" ]; then
     mkdir ~/dotfiles/backup
@@ -18,5 +20,5 @@ fi
 # vimrc
 if [ -f ~/.vimrc ]; then
     command mv ~/.vimrc ~/dotfiles/backup
-	command ln -s ~/dotfiles/.vimrc ~/.vimrc
+    command ln -s ~/dotfiles/.vimrc ~/.vimrc
 fi 
