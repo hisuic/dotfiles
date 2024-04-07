@@ -1,5 +1,3 @@
-#!bin/bash
-
 # make backup directory
 if [ ! -d "$HOME/dotfiles/backup" ]; then
 	mkdir ~/dotfiles/backup
