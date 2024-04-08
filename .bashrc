@@ -189,3 +189,6 @@ else
     #figlet -f smblock "Good Afternoon"
     figlet -f smblock "Good Afternoon" | lolcat
 fi
+
+# Neovim setting
+export PATH="$PATH:/opt/nvim/"
