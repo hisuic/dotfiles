@@ -12,6 +12,8 @@ set tabstop=4
 
 inoremap <silent> jj <ESC>
 
+colorscheme slate
+
 function! HardMode ()
   noremap <Up> <Nop>
   noremap <Down> <Nop>
