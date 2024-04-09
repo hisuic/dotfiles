@@ -26,3 +26,11 @@ if [ -f $HOME/.vimrc ]; then
 else
 	command ln -s ~/dotfiles/.vimrc ~/.vimrc
 fi 
+
+# Neovim
+if [ -f $HOME/.config/nvim ]; then
+	command mv ~/.config/nvim ~/dotfiles/backup
+	command cp -r ~/dotfiles/LazyVim ~/.config/nvim
+else
+	command cp -r ~/dotfiles/LazyVim ~/.config/nvim
+fi
