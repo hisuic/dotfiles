@@ -34,6 +34,8 @@ alias neofetch='neofetch | lolcat'
 # Vim
 alias v='vim'
 # Appimage install(https://github.com/neovim/neovim/blob/master/INSTALL.md) 
+# Befure installing Neovim, you need to install FUSE to run. After updating, you can install it with following command.
+# sudo apt install fuse libfuse2
 alias nvim='~/nvim.appimage'
 alias V='nvim'
 alias VV='nvim .'
