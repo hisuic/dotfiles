@@ -33,7 +33,6 @@ alias neofetch='neofetch | lolcat'
 
 # Vim
 alias v='vim'
-alias vv='vim .'
 # Appimage install(https://github.com/neovim/neovim/blob/master/INSTALL.md) 
 alias nvim='~/nvim.appimage'
 alias V='nvim'
