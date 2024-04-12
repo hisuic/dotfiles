@@ -10,15 +10,15 @@
 #--------------------------------------------------------#
 # Uncomment when NOT using WSL
 #--------------------------------------------------------#
-#alias c='codium .'
+alias c='codium .'
 #--------------------------------------------------------#
 
 
 #--------------------------------------------------------#
 # Uncomment when using WSL
 #--------------------------------------------------------#
-source "$HOME/dotfiles/.wsl-aliases"
-alias c='code .'
+#source "$HOME/dotfiles/.wsl-aliases"
+#alias c='code .'
 #--- Locate these commands as ~/dotfiles/.wsl-aliases ---#
 #alias fa='explorer.exe .' # Open Explorer
 #alias fj='cmd.exe /C start' # Open designated fileo
