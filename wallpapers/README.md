@@ -7,7 +7,7 @@
 [Original Link](https://wallhere.com/en/wallpaper/1623113)
 ![another-synth-planet](another-synth-planet.png)
 
-## Calm Moraine Night
+## Calm Night Moraine
 AI-generated
 ![calm-moraine](calm-moraine.png)
 
