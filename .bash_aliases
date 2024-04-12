@@ -6,14 +6,6 @@
 #      \/         \/     \/     \/          \/        \/           \/        \/         \/        \/ 
 
 
-
-#--------------------------------------------------------#
-# Uncomment when NOT using WSL
-#--------------------------------------------------------#
-alias c='codium .'
-#--------------------------------------------------------#
-
-
 #--------------------------------------------------------#
 # Uncomment when using WSL
 #--------------------------------------------------------#
@@ -25,27 +17,33 @@ alias c='codium .'
 #alias win='cd /mnt/c/Users/[USERNAME]'
 #--------------------------------------------------------#
 
+#--------------------------------------------------------#
+# Uncomment when NOT using WSL
+#--------------------------------------------------------#
+#alias c='codium .'
+#--------------------------------------------------------#
+
 # Aliases
 alias g='git'
 alias gm='git commit -m '
 alias gst='git status'
-alias v='vim'
-alias V='nvim'
 alias py='python3'
 alias cl='clear'
+alias neofetch='neofetch | lolcat'
+
+# Vim
+alias v='vim'
+# Appimage install(https://github.com/neovim/neovim/blob/master/INSTALL.md) 
+# Befure installing Neovim, you need to install FUSE to run. After updating, you can install it with following command.
+# sudo apt install fuse libfuse2
+alias nvim='~/nvim.appimage'
+alias V='nvim'
+alias VV='nvim .'
 
 # ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# Display greeting with figlet
-current_hour=$(date +%H)
-if [ $current_hour -lt 12 ]; then
-    figlet -f smblock "Good Morning"
-else
-    figlet -f smblock "Goot Afternoon"
-fi
 
 # Run sl command forever
 alias sl8='sl_loop'

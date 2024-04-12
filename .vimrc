@@ -8,8 +8,11 @@
 
 set number
 set autoindent
+set tabstop=4
 
 inoremap <silent> jj <ESC>
+
+colorscheme slate
 
 function! HardMode ()
   noremap <Up> <Nop>
