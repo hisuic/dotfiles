@@ -6,8 +6,9 @@
 #      \/         \/     \/     \/          \/        \/           \/        \/         \/        \/ 
 
 
+##########################################################
 #--------------------------------------------------------#
-# Uncomment when using WSL
+#              Uncomment when using WSL                  #
 #--------------------------------------------------------#
 source "$HOME/dotfiles/.wsl-aliases"
 alias c='code .'
@@ -15,13 +16,22 @@ alias c='code .'
 #alias fa='explorer.exe .' # Open Explorer
 #alias fj='cmd.exe /C start' # Open designated fileo
 #alias win='cd /mnt/c/Users/[USERNAME]'
-#--------------------------------------------------------#
+##########################################################
 
+##########################################################
 #--------------------------------------------------------#
-# Uncomment when NOT using WSL
+#              Uncomment when !(using WSL)               #
 #--------------------------------------------------------#
 #alias c='codium .'
-#--------------------------------------------------------#
+#-------------       Open Filemanager       -------------#
+#alias fa='nautilus .'			# GNOME
+#alias fa='dolphin .'			# KDE Plasma
+#alias fa='nemo .' 				# Cinammon
+#alias fa='caja .'				# MATE
+#alias fa='thunar .'			# XFCE
+#alias fa='pcmanfm .'			# LXDE
+#alias fa='pcmanfm-qt .'		# XFQt
+##########################################################
 
 # Aliases
 alias g='git'
