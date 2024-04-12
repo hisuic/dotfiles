@@ -28,9 +28,9 @@ else
 fi 
 
 # Neovim
-if [ -f $HOME/.config/nvim ]; then
-	command mv ~/.config/nvim ~/dotfiles/backup
-	command cp -r ~/dotfiles/LazyVim ~/.config/nvim
-else
-	command cp -r ~/dotfiles/LazyVim ~/.config/nvim
-fi
+#if [ -f $HOME/.config/nvim ]; then
+#	command mv ~/.config/nvim ~/dotfiles/backup
+#	command cp -r ~/dotfiles/LazyVim ~/.config/nvim
+#else
+#	command cp -r ~/dotfiles/LazyVim ~/.config/nvim
+#fi
