@@ -17,4 +17,4 @@ AI-generated
 
 ## Katawaredoki
 [Original Link](https://www.wallpaperflare.com/white-curtains-girl-animated-character-digital-art-artwork-wallpaper-pccdh)
-![katawaredoki](https://www.wallpaperflare.com/white-curtains-girl-animated-character-digital-art-artwork-wallpaper-pccdh)
+![katawaredoki](katawaredoki.png)
