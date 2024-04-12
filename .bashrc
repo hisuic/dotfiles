@@ -183,10 +183,8 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # Display greeting with figlet
 current_hour=$(date +%H)
 if [ $current_hour -lt 12 ]; then
-    #figlet -f smblock "Good Morning"
     figlet -f smblock "Good Morning" | lolcat
 else
-    #figlet -f smblock "Good Afternoon"
     figlet -f smblock "Good Afternoon" | lolcat
 fi
 
