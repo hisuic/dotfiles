@@ -27,6 +27,15 @@ else
 	command ln -s ~/dotfiles/.vimrc ~/.vimrc
 fi 
 
+# neofetch
+if [ -f $HOME/.config/neofetch/config.conf ]; then
+	command mv ~/.config/neofetch/config.conf ~/dotfiles/backup/neofetch
+	command ln -s ~/dotfiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
+else
+	command ln -s ~/dotfiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
+fi 
+
+
 # Neovim
 #if [ -f $HOME/.config/nvim ]; then
 #	command mv ~/.config/nvim ~/dotfiles/backup
