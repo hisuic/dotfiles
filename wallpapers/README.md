@@ -7,26 +7,36 @@
        \/         \/        \/       \/               \/                 \/         \/        \/ 
 ```
 
-## Akatsuki
-[Original Link](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
+---
+
+### Akatsuki ---> [Original Link](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
 ![akatsuki](akatsuki.png)
 
-## Another Synth Planet
-[Original Link](https://wallhere.com/en/wallpaper/1623113)
+---
+
+### Another Synth Planet ---> [Original Link](https://wallhere.com/en/wallpaper/1623113)
 ![another-synth-planet](another-synth-planet.png)
 
-## Calm Night Moraine
+---
+
+### Calm Night Moraine
 AI-generated
 ![calm-moraine](calm-moraine.png)
 
-## Chelsea
-[Original Link](https://www.pixiv.net/en/artworks/104623178)
+---
+
+### Chelsea ---> [Original Link](https://www.pixiv.net/en/artworks/104623178)
 ![chelsea](chelsea.png)
 
-## Frieren
-[Original Link](https://www.wallpaperflare.com/sousou-no-frieren-dark-angry-scary-face-wallpaper-yvrcj)
+---
+
+### Frieren ---> [Original Link](https://www.wallpaperflare.com/sousou-no-frieren-dark-angry-scary-face-wallpaper-yvrcj)
 ![frieren](frieren.png)
 
-## Katawaredoki
-[Original Link](https://www.wallpaperflare.com/white-curtains-girl-animated-character-digital-art-artwork-wallpaper-pccdh)
+---
+
+### Katawaredoki ---> [Original Link](https://www.wallpaperflare.com/white-curtains-girl-animated-character-digital-art-artwork-wallpaper-pccdh)
 ![katawaredoki](katawaredoki.png)
+
+---
+
