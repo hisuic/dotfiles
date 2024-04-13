@@ -29,6 +29,7 @@ fi
 
 # neofetch
 if [ -f $HOME/.config/neofetch/config.conf ]; then
+	mkdir ~/dotfiles/backup/neofetch
 	command mv ~/.config/neofetch/config.conf ~/dotfiles/backup/neofetch
 	command ln -s ~/dotfiles/.config/neofetch/config.conf ~/.config/neofetch/config.conf
 else
