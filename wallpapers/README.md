@@ -15,6 +15,10 @@ AI-generated
 [Original Link](https://www.pixiv.net/en/artworks/104623178)
 ![chelsea](chelsea.png)
 
+## Frieren
+[Original Link](https://www.wallpaperflare.com/sousou-no-frieren-dark-angry-scary-face-wallpaper-yvrcj)
+![frieren](frieren.png)
+
 ## Katawaredoki
 [Original Link](https://www.wallpaperflare.com/white-curtains-girl-animated-character-digital-art-artwork-wallpaper-pccdh)
 ![katawaredoki](katawaredoki.png)
