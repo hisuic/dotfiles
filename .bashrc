@@ -181,6 +181,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 # Display greeting with figlet
+# If this doesn't work well by missing of font file, try install toilet command.
 current_hour=$(date +%H)
 if [ $current_hour -lt 12 ]; then
     figlet -f smblock "Good Morning" | lolcat
