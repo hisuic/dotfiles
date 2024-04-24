@@ -1,3 +1,4 @@
+-- https://github.com/LazyVim/LazyVim/discussions/116
 return {
   "tokyonight.nvim",
   lazy = true,
