@@ -192,3 +192,7 @@ fi
 # Neovim setting
 export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# brew setting(for Oh My Posh)
+# eval "$(/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
