@@ -198,4 +198,5 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Oh-My-Posh activation
-eval "$(oh-my-posh init bash)"
+#eval "$(oh-my-posh init bash)"
+eval "$(oh-my-posh init bash --config ~/.poshthemes/jv_sitecorian.omp.json)"
