@@ -201,4 +201,4 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #eval "$(oh-my-posh init bash)"
 #eval "$(oh-my-posh init bash --config ~/.poshthemes/jv_sitecorian.omp.json)"
 #eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
-eval "$(oh-my-posh init bash --config ~/.poshthemes/kushal.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshthemes/kushal.omp.json)" # Currently using
