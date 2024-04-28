@@ -66,6 +66,9 @@ sl_loop() {
     done
 }
 
+# Load Oh My Posh prompt
+alias ompp='eval "$(oh-my-posh init bash --config ~/.poshthemes/kushal.omp.json)"'
+
 # Load ParrotOS prompt
 # Copied from .bashrc
 alias parrotp='parrot_prompt'
