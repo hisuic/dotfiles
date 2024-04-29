@@ -39,7 +39,6 @@ alias gm='git commit -m '
 alias gst='git status'
 alias py='python3'
 alias cl='clear'
-alias neofetch='neofetch | lolcat'
 
 # Vim
 alias v='vim'
