@@ -38,6 +38,8 @@ alias clip='clip.exe'
 alias g='git'
 alias gm='git commit -m '
 alias gst='git status'
+alias gp='git push origin'
+alias gl='git pull origin'
 alias py='python3'
 alias cl='clear'
 
