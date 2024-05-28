@@ -12,6 +12,7 @@
 #--------------------------------------------------------#
 source "$HOME/dotfiles/.wsl-aliases"
 alias c='code .'
+alias clip='clip.exe'
 #--- Locate these commands as ~/dotfiles/.wsl-aliases ---#
 #alias fa='explorer.exe .' # Open Explorer
 #alias fj='cmd.exe /C start' # Open designated fileo
