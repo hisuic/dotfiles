@@ -12,15 +12,6 @@
 ### Akame ---> [Original](https://wall.alphacoders.com/big.php?i=863290)
 ![akame](akame.png)
 
----
-
-### Akatsuki ---> [Original](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
-![akatsuki](akatsuki.png)
-
----
-
-### Another Synth Planet ---> [Original](https://wallhere.com/en/wallpaper/1623113)
-![another-synth-planet](another-synth-planet.png)
 
 ---
 
@@ -45,8 +36,12 @@ AI-generated
 
 ---
 
-### Katawaredoki ---> [Original](https://www.wallpaperflare.com/white-curtains-girl-animated-character-digital-art-artwork-wallpaper-pccdh)
-![katawaredoki](katawaredoki.png)
+### Futuresynth 1 ---> [Original](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
+![akatsuki](futuresynth2.png)
 
 ---
 
+### Futuresynth 2 ---> [Original](https://wallhere.com/en/wallpaper/1623113)
+![another-synth-planet](futuresynth2.png)
+
+---
