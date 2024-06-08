@@ -37,7 +37,7 @@ AI-generated
 ---
 
 ### Futuresynth 1 ---> [Original](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
-![akatsuki](futuresynth2.png)
+![akatsuki](futuresynth1.png)
 
 ---
 
