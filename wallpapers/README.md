@@ -37,11 +37,16 @@ AI-generated
 ---
 
 ### Futuresynth 1 ---> [Original](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
-![akatsuki](futuresynth1.png)
+![futuresynth1](futuresynth1.png)
 
 ---
 
 ### Futuresynth 2 ---> [Original](https://wallhere.com/en/wallpaper/1623113)
-![another-synth-planet](futuresynth2.png)
+![futuresynth2](futuresynth2.png)
+
+---
+
+### McLaren P1 ---> [Original](https://www.wallpaperflare.com/super-car-mclaren-mp4-neon-reflection-wallpaper-yhrtj)
+![mclarenp1](mclarenp1.png)
 
 ---
