@@ -202,3 +202,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #eval "$(oh-my-posh init bash --config ~/.poshthemes/jv_sitecorian.omp.json)"
 #eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
 eval "$(oh-my-posh init bash --config ~/.poshthemes/kushal.omp.json)" # Currently using
+
+Node setting
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
