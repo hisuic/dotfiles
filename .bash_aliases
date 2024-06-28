@@ -1,10 +1,9 @@
 # .__    ____            /\            _____  .____    .___   _____    ____________________ _________
 # |  |__/_   | ____   ___)/  ______   /  _  \ |    |   |   | /  _  \  /   _____/\_   _____//   _____/
-# |  |  \|   |/    \_/ __ \ /  ___/  /  /_\  \|    |   |   |/  /_\  \ \_____  \  |    __)_ \_____  \ 
+# |  |  \|   |/    \_/ __ \ /  ___/  /  /_\  \|    |   |   |/  /_\  \ \_____  \  |    __)_ \_____  \
 # |   Y  \   |   |  \  ___/ \___ \  /    |    \    |___|   /    |    \/        \ |        \/        \
 # |___|  /___|___|  /\___  >____  > \____|__  /_______ \___\____|__  /_______  //_______  /_______  /
-#      \/         \/     \/     \/          \/        \/           \/        \/         \/        \/ 
-
+#      \/         \/     \/     \/          \/        \/           \/        \/         \/        \/
 
 ##########################################################
 #--------------------------------------------------------#
@@ -45,7 +44,7 @@ alias cl='clear'
 
 # Vim
 alias v='vim'
-# Appimage install(https://github.com/neovim/neovim/blob/master/INSTALL.md) 
+# Appimage install(https://github.com/neovim/neovim/blob/master/INSTALL.md)
 # Befure installing Neovim, you need to install FUSE to run. After updating, you can install it with following command.
 # sudo apt install fuse libfuse2
 alias nvim='~/nvim.appimage'
@@ -53,19 +52,23 @@ alias V='nvim'
 alias VV='nvim .'
 
 # ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
+
+# exa settings
+alias ls='exa --icons'
+alias la='exa -a --icons'
+alias ll='exa -l --icons'
 
 # Run sl command forever
 alias sl8='sl_loop'
 sl_loop() {
-    while true
-    do
-        sl | lolcat
-	sl -l | lolcat
-	sl -F | lolcat
-    done
+	while true; do
+		sl | lolcat
+		sl -l | lolcat
+		sl -F | lolcat
+	done
 }
 
 # Load Oh-My-Posh prompt
@@ -83,11 +86,10 @@ parrot_prompt() {
 	fi
 
 	case "$TERM" in
-	xterm*|rxvt*)
+	xterm* | rxvt*)
 		PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo ' \[\033[0;39m\]\u\[\033[01;33m\] '; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
 		;;
-	*)
-		;;
+	*) ;;
 	esac
 }
 
@@ -101,12 +103,11 @@ ubuntu_prompt() {
 	else
 		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 	fi
-		unset color_prompt force_color_prompt
+	unset color_prompt force_color_prompt
 	case "$TERM" in
-	xterm*|rxvt*)
+	xterm* | rxvt*)
 		PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
 		;;
-	*)
-		;;
+	*) ;;
 	esac
 }
