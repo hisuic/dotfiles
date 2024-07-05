@@ -199,8 +199,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Oh-My-Posh activation
 #eval "$(oh-my-posh init bash)"
-#eval "$(oh-my-posh init bash --config ~/.poshthemes/jv_sitecorian.omp.json)"
-#eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
+#eval "$(oh-my-posh init bash --config ~/.poshthemes/kushal.omp.json)"
 eval "$(oh-my-posh init bash --config ~/.poshthemes/tokyonight_storm.omp.json)" # Currently using
 
 # Node setting
