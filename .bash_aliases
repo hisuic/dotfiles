@@ -35,7 +35,7 @@ alias clip='clip.exe'
 
 # Aliases
 alias g='git'
-alias e='exit'
+alias q='exit'
 alias gm='git commit -m '
 alias gst='git status'
 alias gp='git push origin'
