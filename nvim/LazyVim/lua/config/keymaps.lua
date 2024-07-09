@@ -12,7 +12,7 @@
 vim.o.number = true
 vim.o.autoindent = true
 vim.o.tabstop = 4
-vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "jj", "<ESC>", { noremap = true, silent = true })
 
 local function HardMode()
   vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", { noremap = true })
