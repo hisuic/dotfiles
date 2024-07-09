@@ -58,7 +58,7 @@
             "{{ if gt .Ahead 0 }}p:terminal-yellow{{ end }}",
             "{{ if gt .Behind 0 }}p:terminal-magenta{{ end }}"
           ],
-          "template": " \uefc3 {{ .HEAD}} \uedfb",
+          "template": "  \uefc3 {{ .HEAD}} \uedfb",
           "properties": {
             "fetch_status": true,
             "branch_icon": "\ue725 "
