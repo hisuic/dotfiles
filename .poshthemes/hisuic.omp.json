@@ -58,10 +58,10 @@
             "{{ if gt .Ahead 0 }}p:terminal-yellow{{ end }}",
             "{{ if gt .Behind 0 }}p:terminal-magenta{{ end }}"
           ],
-          "template": "  \uefc3 {{ .HEAD}} \uedfb",
+          "template": "  \ueb6f {{ .HEAD}} \ueb70",
           "properties": {
             "fetch_status": true,
-            "branch_icon": "\ue725 "
+            "branch_icon": "\uf09b  "
           }
         },
         {
@@ -132,7 +132,7 @@
         {
           "foreground": "p:pistachio-green",
           "style": "plain",
-          "template": "\u25b6",
+          "template": "\uf101",
           "type": "text"
         }
       ],
