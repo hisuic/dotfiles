@@ -166,7 +166,7 @@ keybinds clear-defaults=true {
         bind "Ctrl p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
+        bind "Ctrl t" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
@@ -175,7 +175,7 @@ keybinds clear-defaults=true {
         bind "Ctrl o" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Ctrl t" { SwitchToMode "Tab"; }
+        bind "Ctrl n" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
         bind "Ctrl f" { SwitchToMode "Move"; }
