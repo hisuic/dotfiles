@@ -27,8 +27,8 @@
           "type": "text",
           "style": "plain",
           "background": "transparent",
-          "foreground": "p:terminal-blue",
-          "template": "\uea71 "
+          "foreground": "p:terminal-magenta",
+          "template": "\ued00 "
         },
         {
           "type": "path",
@@ -45,7 +45,7 @@
     		  }
   			]
           },
-          "template": "<b>{{ .Path }}</b> <p:light-sky-blue>\ue712</>"
+          "template": "<b>{{ .Path }}</b>"
         },
         {
           "type": "git",
@@ -58,7 +58,7 @@
             "{{ if gt .Ahead 0 }}p:terminal-yellow{{ end }}",
             "{{ if gt .Behind 0 }}p:terminal-magenta{{ end }}"
           ],
-          "template": "  \ueb6f {{ .HEAD}} \ueb70",
+          "template": " \ueb6f {{ .HEAD}} \ueb70",
           "properties": {
             "fetch_status": true,
             "branch_icon": "\uf09b  "
