@@ -1,0 +1,6 @@
+# Aliases
+alias c='code .' # Open current directory with VSCode
+alias clip='clip.exe' # Use clipboard. Example usage: cat FILENAME | clip
+alias fa='explorer.exe .' # Open Explorer
+alias fj='cmd.exe /C start' # Execute designated file
+alias se='/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe https://start.zorin.com/'
