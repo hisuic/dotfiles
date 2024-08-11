@@ -7,30 +7,25 @@
 
 ##########################################################
 #--------------------------------------------------------#
-#              Uncomment when using WSL                  #
+# Add these settings in ~/.device_setting when using WSL #
 #--------------------------------------------------------#
-source "$HOME/dotfiles/.wsl-aliases"
-alias c='code .'
-alias clip='clip.exe'
-#--- Locate these commands as ~/dotfiles/.wsl-aliases ---#
-#alias fa='explorer.exe .' # Open Explorer
-#alias fj='cmd.exe /C start' # Open designated fileo
-#alias win='cd /mnt/c/Users/[USERNAME]'
+# source "$HOME/dotfiles/.wsl-setting"                   #
+# alias win='cd /mnt/c/Users/[USERNAME]'                 #
 ##########################################################
 
 ##########################################################
 #--------------------------------------------------------#
-#              Uncomment when !(using WSL)               #
+#Add these settings in ~/.device_setting when using Linux#
 #--------------------------------------------------------#
-#alias c='codium .'
+# alias c='codium .'                                     #
 #-------------       Open Filemanager       -------------#
-#alias fa='nautilus .'			# GNOME
-#alias fa='dolphin .'			# KDE Plasma
-#alias fa='nemo .' 				# Cinammon
-#alias fa='caja .'				# MATE
-#alias fa='thunar .'			# XFCE
-#alias fa='pcmanfm .'			# LXDE
-#alias fa='pcmanfm-qt .'		# XFQt
+# alias fa='nautilus .'                                  #
+# alias fa='dolphin .'                                   #
+# alias fa='nemo .'                                      #
+# alias fa='caja .'                                      #
+# alias fa='thunar .'                                    #
+# alias fa='pcmanfm .'                                   #
+# alias fa='pcmanfm-qt .'                                #
 ##########################################################
 
 # Aliases
