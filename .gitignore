@@ -5,8 +5,5 @@
 #  /\  \___  /|__||__| |__\___  /|___|  /\____/|__|    \___  >
 #  \/ /_____/            /_____/      \/                   \/ 
 
-# WSL aliases
-.wsl-aliases
-
 # backup directory: save original configs
 backup/
