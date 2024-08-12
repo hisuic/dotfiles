@@ -181,6 +181,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Load device specific settings
+# Put all setting which depends on device here.
 if [ -f ~/.device_setting ]; then
 	. ~/.device_setting
 fi
