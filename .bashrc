@@ -185,3 +185,10 @@ fi
 if [ -f ~/.device_setting ]; then
 	. ~/.device_setting
 fi
+
+# Define mkcd command
+# Make directory and move into the directory at the same time
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
