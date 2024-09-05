@@ -40,6 +40,8 @@ alias py='python3'
 alias cl='clear'
 
 # Vim
+# When you're installing nvim appimage, visit https://github.com/neovim/neovim/blob/master/INSTALL.md
+# Befure installing Neovim, you need to install "fuse" to run.
 alias v='vim'
 alias V='nvim'
 alias VV='nvim .'
@@ -58,11 +60,11 @@ alias lll='exa -a -l --icons'
 # Run sl command forever
 alias sl8='sl_loop'
 sl_loop() {
-	while true; do
-		sl | lolcat
-		sl -l | lolcat
-		sl -F | lolcat
-	done
+  while true; do
+    sl | lolcat
+    sl -l | lolcat
+    sl -F | lolcat
+  done
 }
 
 # Load Oh-My-Posh prompt
@@ -72,36 +74,36 @@ alias ompp='eval "$(oh-my-posh init bash --config ~/.poshthemes/hisuic.omp.json)
 # Copied from .bashrc
 alias parrotp='parrot_prompt'
 parrot_prompt() {
-	unset PROMPT_COMMAND
-	if [ "$color_prompt" = yes ]; then
-		PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;37m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo ' \[\033[0;39m\]\u\[\033[01;33m\] '; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
-	else
-		PS1='┌──[ \u ]─[\w]\n└──╼  >> '
-	fi
+  unset PROMPT_COMMAND
+  if [ "$color_prompt" = yes ]; then
+    PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;37m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo ' \[\033[0;39m\]\u\[\033[01;33m\] '; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
+  else
+    PS1='┌──[ \u ]─[\w]\n└──╼  >> '
+  fi
 
-	case "$TERM" in
-	xterm* | rxvt*)
-		PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo ' \[\033[0;39m\]\u\[\033[01;33m\] '; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
-		;;
-	*) ;;
-	esac
+  case "$TERM" in
+  xterm* | rxvt*)
+    PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo ' \[\033[0;39m\]\u\[\033[01;33m\] '; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
+    ;;
+  *) ;;
+  esac
 }
 
 # Load WSL(Ubuntu) default prompt
 # Copied from .bashrc
 alias ubuntup='ubuntu_prompt'
 ubuntu_prompt() {
-	unset PROMPT_COMMAND
-	if [ "$color_prompt" = yes ]; then
-		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-	else
-		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-	fi
-	unset color_prompt force_color_prompt
-	case "$TERM" in
-	xterm* | rxvt*)
-		PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-		;;
-	*) ;;
-	esac
+  unset PROMPT_COMMAND
+  if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  fi
+  unset color_prompt force_color_prompt
+  case "$TERM" in
+  xterm* | rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+  *) ;;
+  esac
 }
