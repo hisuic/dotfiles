@@ -5,6 +5,7 @@ lolcat
 toilet
 zellij
 exa
+build-essential
 fuse #For neovim
 
 # coding
