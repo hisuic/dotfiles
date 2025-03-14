@@ -31,16 +31,6 @@ AI-generated
 
 ---
 
-### Fern ---> [Original](https://wallhaven.cc/w/qzpwmr)
-![fern](fern.png)
-
----
-
-### Frieren ---> [Original](https://www.wallpaperflare.com/sousou-no-frieren-dark-angry-scary-face-wallpaper-yvrcj)
-![frieren](frieren.png)
-
----
-
 ### Futuresynth 1 ---> [Original](https://www.wallpaperflare.com/digital-digital-art-artwork-fantasy-art-drawing-painting-wallpaper-gjwku)
 ![futuresynth1](futuresynth1.png)
 
