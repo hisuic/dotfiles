@@ -22,7 +22,7 @@ AI-generated
 ---
 
 ### Beautiful Water ---> [Original](https://www.freepik.com/free-ai-image/beautiful-water-view-anime-style_94462226.htm)
-![Beautiful Water](beautiful-water-view-anime-style_94462226.png)
+![Beautiful Water](beautiful-water.png)
 
 ---
 
