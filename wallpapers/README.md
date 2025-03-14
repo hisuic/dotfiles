@@ -50,3 +50,6 @@ AI-generated
 ![mclarenp1](mclarenp1.png)
 
 ---
+
+### Beautiful Water ---> [Original](https://www.freepik.com/free-ai-image/beautiful-water-view-anime-style_94462226.htm)
+![Beautiful Water](beautiful-water-view-anime-style_94462226.png)
