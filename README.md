@@ -6,13 +6,10 @@ ________   ______________________________.___.____     ___________ _________
 /_______  /\_______  /____|    \___  /   |___|_______ \/_______  /_______  /
         \/         \/              \/                \/        \/        \/ 
 ```
+Hyprland Setup
+![demo1](https://github.com/user-attachments/assets/79423f17-43be-439c-8472-5246f2072278)
+![demo2](https://github.com/user-attachments/assets/f8956737-a168-4c33-9b13-19066dac5be0)
+![demo3](https://github.com/user-attachments/assets/84876085-9c51-4de3-947a-94637ef5a91c)
+
 WSL Setup
 ![screenshot1](https://github.com/h1ne/dotfiles/assets/130957043/598373f3-c7be-4d05-a373-7aa8da736a30)
-
-Requirements  
-- [nvim](https://github.com/neovim/neovim/blob/master/INSTALL.md) (>= 0.9.0)  
-- [nerd fonts](https://www.nerdfonts.com/) i personally use FiraCode Nerd Font  
-
-Post Setup  
-- [homebrew installation](https://docs.brew.sh/Homebrew-on-Linux#install) for oh-my-posh  
-- [oh-my-posh](https://ohmyposh.dev/)  
