@@ -236,7 +236,8 @@
       "car": "",
       "default": ["", ""]
     },
-    "on-click": "pavucontrol",
+    // "on-click": "pavucontrol",
+    "on-click": "blueman-manager",
     "on-scroll-up": "pamixer -ui 2",
     "on-scroll-down": "pamixer -ud 2"
   }, 
