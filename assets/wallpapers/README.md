@@ -21,11 +21,6 @@ AI-generated
 
 ---
 
-### Beautiful Water ---> [Original](https://www.freepik.com/free-ai-image/beautiful-water-view-anime-style_94462226.htm)
-![Beautiful Water](beautiful-water.png)
-
----
-
 ### Chelsea ---> [Original](https://www.pixiv.net/en/artworks/104623178)
 ![chelsea](chelsea.png)
 
@@ -38,6 +33,11 @@ AI-generated
 
 ### Futuresynth 2 ---> [Original](https://wallhere.com/en/wallpaper/1623113)
 ![futuresynth2](futuresynth2.png)
+
+---
+
+### Lakeside ---> [Original](https://www.freepik.com/free-ai-image/beautiful-water-view-anime-style_94462226.htm)
+![Lakeside](lakeside.png)
 
 ---
 
