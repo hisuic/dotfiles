@@ -53,9 +53,12 @@ alias VV='nvim .'
 
 # exa settings
 alias ls='exa --icons'
+alias l='exa --icons'
 alias la='exa -a --icons'
 alias ll='exa -l --icons'
 alias lll='exa -a -l --icons'
+
+alias s=''
 
 # Run sl command forever
 alias sl8='sl_loop'
