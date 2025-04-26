@@ -12,6 +12,7 @@ set tabstop=4
 inoremap <silent> jj <ESC>
 
 nnoremap <Space> :w <CR>
+nnoremap <Space><Space> :wq <CR>
 
 colorscheme slate
 
