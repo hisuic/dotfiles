@@ -43,6 +43,7 @@ alias cl='clear'
 # When you're installing nvim appimage, visit https://github.com/neovim/neovim/blob/master/INSTALL.md
 # Befure installing Neovim, you need to install "fuse" to run.
 alias v='vim'
+alias vv='vim .'
 alias V='nvim'
 alias VV='nvim .'
 
