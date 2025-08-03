@@ -29,15 +29,19 @@
 ##########################################################
 
 # Aliases
-alias g='git'
 alias q='exit'
 alias z='zellij'
-alias gm='git commit -m '
-alias gst='git status'
-alias gp='git push origin'
-alias gl='git pull origin'
 alias py='python3'
 alias cl='clear'
+
+# Git aliases
+alias g='git'
+alias gm='git commit -m'
+alias gst='git status'
+alias gp='git push origin'
+alias gpm='git push origin main'
+alias gl='git pull origin'
+alias glm='git pull origin main'
 
 # Vim
 # When you're installing nvim appimage, visit https://github.com/neovim/neovim/blob/master/INSTALL.md
