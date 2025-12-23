@@ -1,32 +1,45 @@
-* {
-  border-radius: 8px;
-  border: none;
-}
-
 window {
-  font-size: 20px;
-  font-family: "Roboto Mono Medium";
-  background-color: rgba(50, 50, 50, 1.0);
-  color: white;
-  /*border: 2px solid #87ceeb;*/
+  margin: 0px;
+  border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  background-color: rgba(20, 20, 26, 0.85);
 }
 
-#entry {
-  padding: 0.25em;
-}
-
-#entry:selected {
-  background-color: #bbccdd;
-  opacity: 0.8;
-  background: linear-gradient(90deg, #bbffdd, #dd77ff);
-}
-
-#text:selected {
-  color: #333333;
+#outer-box {
+  padding: 14px;
+  border-radius: 18px;
 }
 
 #input {
-  background-color: rgba(50, 50, 50, 0.5);
-  color: white;
-  padding: 0.25em;
+  margin: 0 0 10px 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background-color: rgba(255,255,255,0.06);
+  color: #eaeaea;
+}
+
+#inner-box {
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+#scroll {
+  margin-top: 4px;
+}
+
+#entry {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background-color: transparent;
+  color: #eaeaea;
+}
+
+#entry:selected {
+  background-color: rgba(255,255,255,0.10);
+}
+
+#text {
+  color: inherit;
 }
