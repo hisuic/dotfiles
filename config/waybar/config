@@ -1,0 +1,135 @@
+{
+	"layer": "top",
+	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "hyprland/mode", "custom/clipboard", "group/spotify"],
+	"modules-center": ["clock"],
+	"modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
+      "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
+      "format": " {elapsedTime:%M:%S}",
+      "format-disconnected": "⚠  Disconnected",
+      "format-stopped": " Not Playing",
+      "on-click": "mpc toggle",
+      "state-icons": {
+        "playing": "",
+        "paused": ""
+      }
+    },
+    "mpd#2": {
+      "format": "",
+      "format-disconnected": "",
+      "format-paused": "",
+      "format-stopped": "",
+      // Commands to execute on events
+      "on-click": "mpc -q pause && mpc -q prev && mpc -q start"
+    },
+    "mpd#3": {
+      "interval": 1,
+      "format": "{stateIcon}",
+      "format-disconnected": "",
+      "format-paused": "{stateIcon}",
+      "format-stopped": "",
+      "state-icons": {
+        "paused": "",
+        "playing": ""
+      },
+      // Commands to execute on events
+      "on-click": "mpc toggle"
+    },
+    "mpd#4": {
+      "format": "",
+      "format-disconnected": "",
+      "format-paused": "",
+      "format-stopped": "",
+      // Commands to execute on events
+      "on-click": "mpc -q pause && mpc -q next && mpc -q start"
+    },
+    "hyprland/workspaces": {
+      "format": "",
+      "on-click": "activate"
+    },
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		}
+	},
+    "custom/clipboard": {
+        "format": "󰅍",
+        "tooltip": false,
+        "on-click": "~/bin/wofi-clipboard/main.sh",
+    },
+	"network": {
+		"tooltip": false,
+        "format": "⚠  Disabled",
+        "format-wifi": " ",
+        "format-ethernet": "  Wired",
+        "format-disconnected": "⚠  Disconnected",
+        "on-click": "nm-connection-editor"
+	},
+    "temperature": {
+        "tooltip": false,
+        "format": " {}°C"
+    },
+	"cpu": {
+		"tooltip": false,
+		"format": "  {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": "  {}%"
+	},
+    "clock": {
+        "tooltip": false,
+        "format": "  {}"
+    },
+    "battery": {
+        "tooltip": false,
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": [
+            "󰁺",  // 0–10%
+            "󰁻",  // 10–20%
+            "󰁼",  // 20–30%
+            "󰁽",  // 30–40%
+            "󰁾",  // 40–50%
+            "󰁿",  // 50–60%
+            "󰂀",  // 60–70%
+            "󰂁",  // 70–80%
+            "󰂂",  // 80–90%
+            "󰁹"   // 90–100%
+        ]
+    },
+    "group/spotify": {
+      "orientation": "horizontal",
+      "modules": [
+        "custom/spotify-text",
+        "custom/spotify-prev",
+        "custom/spotify-play",
+        "custom/spotify-next"
+      ]
+    },
+    "custom/spotify-text": {
+        "exec": "sh -lc 'playerctl -p spotify metadata --format \"{{ artist }} - {{ title }}\" 2>/dev/null || echo \"\"'",
+        "interval": 1,
+        "tooltip": true,
+        "escape": true
+    },
+    "custom/spotify-prev": {
+        "exec": "sh -lc 'playerctl -p spotify status >/dev/null 2>&1 && echo 󰒮 || echo \"\"'",
+        "interval": 1,
+        "on-click": "playerctl -p spotify previous"
+    },
+    "custom/spotify-play": {
+        "exec": "sh -lc 's=$(playerctl -p spotify status 2>/dev/null) || { echo \"\"; exit 0; }; if [ \"$s\" = \"Playing\" ]; then echo 󰏤; else echo 󰐊; fi'",
+        "interval": 1,
+        "on-click": "playerctl -p spotify play-pause",
+        "tooltip": false
+    },
+    "custom/spotify-next": {
+        "exec": "sh -lc 'playerctl -p spotify status >/dev/null 2>&1 && echo 󰒭 || echo \"\"'",
+        "interval": 1,
+        "on-click": "playerctl -p spotify next"
+    }
+}
