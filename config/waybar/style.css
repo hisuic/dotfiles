@@ -18,11 +18,11 @@ window#waybar.hidden {
   margin-top: 8px;
   padding-left: 16px;
   padding-right: 16px;
-	border-radius: 12px;
+	border-radius: 10px;
 	transition: none;
 	/*
     color: #f8f8f2;
-	background: #282a36;
+    background: #282a36;
   */
   color: transparent;
 	background: transparent;
@@ -40,8 +40,8 @@ window#waybar.PCSX2 #window {
 	margin-top: 8px;
 	margin-left: 12px;
 	margin-bottom: 0;
-	border-radius: 12px;
-	background: #4b157a;
+	border-radius: 10px;
+	background: #7851A9;
 	transition: none;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -71,7 +71,7 @@ window#waybar.PCSX2 #window {
 #workspaces button.focused,
 #workspaces button.active,
 #workspaces button.current {
-  color: #ff5555;
+  color: #e18a3a;
   font-weight: bold;
 }
 
@@ -89,9 +89,9 @@ window#waybar.PCSX2 #window {
 	padding-left: 16px;
 	padding-right: 16px;
 	margin-bottom: 0;
-	border-radius: 12px;
+	border-radius: 10px;
 	transition: none;
-	background: #4b157a;
+	background: #7851A9;
 }
 
 #mpd {
@@ -101,7 +101,7 @@ window#waybar.PCSX2 #window {
 #mpd.disconnected,
 #mpd.stopped {
 	color: #f8f8f2;
-	background: #4b157a;
+	background: #7851A9;
 }
 
 #network {
@@ -156,7 +156,7 @@ window#waybar.PCSX2 #window {
   padding-left: 16px;
   padding-right: 16px;
 
-  border-radius: 26px;
+  border-radius: 10px;
   transition: none;
 
   color: #f8f8f2;
