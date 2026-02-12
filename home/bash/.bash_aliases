@@ -60,11 +60,18 @@ alias VV='nvim .'
 # alias lla='ls -la'
 
 # exa settings
-alias ls='exa --icons'
-alias l='exa --icons'
-alias la='exa -a --icons'
-alias ll='exa -l --icons'
-alias lla='exa -a -l --icons'
+# alias ls='exa --icons'
+# alias l='exa --icons'
+# alias la='exa -a --icons'
+# alias ll='exa -l --icons'
+# alias lla='exa -a -l --icons'
+
+# eza settings
+alias ls='eza --icons'
+alias l='eza --icons'
+alias la='eza -a --icons'
+alias ll='eza -l --icons'
+alias lla='eza -a -l --icons'
 
 alias s=''
 
