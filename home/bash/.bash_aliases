@@ -29,7 +29,9 @@
 ##########################################################
 
 # Aliases
+alias sudo='sudo '
 alias q='exit'
+alias y='yazi'
 alias z='zellij'
 alias py='python3'
 alias cl='clear'
