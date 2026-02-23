@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "hyprland/mode", "custom/clipboard", "group/spotify"],
 	"modules-center": ["clock"],
-	"modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
+	"modules-right": ["custom/recorder", "network", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
       "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
       "format": " {elapsedTime:%M:%S}",
       "format-disconnected": "⚠  Disconnected",
@@ -54,6 +54,13 @@
 			"default": ["󰕿", "󰖀", "󰕾"]
 		}
 	},
+    "custom/recorder": {
+        "exec": "[ -f /tmp/wf-recorder.pid ] && echo '{\"text\":\"⏺ REC\",\"class\":\"recording\"}' || echo '{\"text\":\"\"}'",
+        "return-type": "json",
+        "interval": 2,
+        "tooltip": false,
+        "on-click": "screen-record"
+    },
     "custom/clipboard": {
         "format": "󰅍",
         "tooltip": false,

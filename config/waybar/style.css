@@ -139,6 +139,20 @@ window#waybar.PCSX2 #window {
 	color: #f8f8f2;
 }
 
+#custom-recorder {
+	margin-top: 8px;
+	margin-left: 8px;
+}
+
+#custom-recorder.recording {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 10px;
+	background: #ff5555;
+	color: #f8f8f2;
+	font-weight: bold;
+}
+
 #group-spotify {
   margin-top: 8px;
   margin-left: 8px;
