@@ -1,0 +1,236 @@
+/**
+ * Modern Glass Theme for Rofi
+ * Glassmorphism design with semi-transparent background (opacity ~0.7)
+ *
+ * Blur requires compositor support:
+ *   - Hyprland: decoration.blur.enabled = true; windowrulev2 = blur, class:^(rofi)$
+ *   - picom:    blur-method = "dual_kawase"; blur-background = true;
+ */
+
+* {
+    /* Base palette */
+    bg-base:    rgba(10, 10, 22, 0.70);
+    bg-surface: rgba(22, 22, 44, 0.75);
+    bg-overlay: rgba(255, 255, 255, 0.05);
+    bg-hover:   rgba(130, 170, 255, 0.16);
+    bg-select:  rgba(130, 170, 255, 0.22);
+
+    fg-primary: #E8ECF4;
+    fg-muted:   #8892A8;
+    fg-faint:   #505870;
+
+    accent:     #82AAFF;
+    accent2:    #C792EA;
+    urgent:     #FF5370;
+
+    border-col: rgba(130, 170, 255, 0.30);
+    gutter:     rgba(255, 255, 255, 0.03);
+
+    /* Defaults */
+    background-color: transparent;
+    text-color:       @fg-primary;
+    border-color:     @border-col;
+    font:             "FiraCode Nerd Font Mono 12";
+}
+
+/*─────────────────────────────────────
+  Window
+─────────────────────────────────────*/
+window {
+    background-color: @bg-base;
+    border:           1px solid;
+    border-color:     @border-col;
+    border-radius:    20px;
+    width:            660px;
+    padding:          0px;
+    location:         center;
+    anchor:           center;
+    transparency:     "real";
+}
+
+/*─────────────────────────────────────
+  Layout
+─────────────────────────────────────*/
+mainbox {
+    background-color: transparent;
+    children:         [inputbar, listview];
+    spacing:          0px;
+    padding:          20px;
+}
+
+/*─────────────────────────────────────
+  Search bar
+─────────────────────────────────────*/
+inputbar {
+    background-color: @bg-overlay;
+    border:           1px solid;
+    border-color:     rgba(255, 255, 255, 0.08);
+    border-radius:    13px;
+    padding:          12px 16px;
+    margin:           0px 0px 14px 0px;
+    children:         [prompt, textbox-prompt-colon, entry];
+    spacing:          6px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @accent;
+    font:             "FiraCode Nerd Font Mono Bold 12";
+    vertical-align:   0.5;
+}
+
+textbox-prompt-colon {
+    background-color: transparent;
+    text-color:       @fg-faint;
+    str:              "›";
+    vertical-align:   0.5;
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg-primary;
+    placeholder:      "Search...";
+    placeholder-color: @fg-faint;
+    cursor:           text;
+    vertical-align:   0.5;
+}
+
+/*─────────────────────────────────────
+  List
+─────────────────────────────────────*/
+listview {
+    background-color: transparent;
+    lines:            8;
+    columns:          1;
+    spacing:          3px;
+    scrollbar:        true;
+    padding:          2px;
+    fixed-height:     false;
+    dynamic:          true;
+}
+
+/*─────────────────────────────────────
+  List items
+─────────────────────────────────────*/
+element {
+    background-color: transparent;
+    border-radius:    10px;
+    padding:          9px 12px;
+    spacing:          10px;
+    children:         [element-icon, element-text];
+    cursor:           pointer;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             22px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       @fg-primary;
+    highlight:        bold #82AAFF;
+    vertical-align:   0.5;
+}
+
+/* Normal states */
+element normal.normal {
+    background-color: transparent;
+    text-color:       @fg-primary;
+}
+
+element normal.urgent {
+    background-color: rgba(255, 83, 112, 0.12);
+    text-color:       @urgent;
+}
+
+element normal.active {
+    background-color: rgba(130, 170, 255, 0.10);
+    text-color:       @accent;
+}
+
+/* Selected states */
+element selected.normal {
+    background-color: @bg-select;
+    text-color:       @fg-primary;
+}
+
+element selected.urgent {
+    background-color: rgba(255, 83, 112, 0.22);
+    text-color:       @urgent;
+}
+
+element selected.active {
+    background-color: rgba(130, 170, 255, 0.28);
+    text-color:       @accent;
+}
+
+/* Alternate (even rows) */
+element alternate.normal {
+    background-color: @gutter;
+    text-color:       @fg-primary;
+}
+
+element alternate.urgent {
+    background-color: rgba(255, 83, 112, 0.08);
+    text-color:       @urgent;
+}
+
+element alternate.active {
+    background-color: rgba(130, 170, 255, 0.06);
+    text-color:       @accent;
+}
+
+/*─────────────────────────────────────
+  Scrollbar
+─────────────────────────────────────*/
+scrollbar {
+    width:            4px;
+    border:           0px;
+    background-color: rgba(255, 255, 255, 0.04);
+    handle-color:     rgba(130, 170, 255, 0.45);
+    handle-width:     4px;
+    border-radius:    4px;
+    padding:          0px;
+}
+
+/*─────────────────────────────────────
+  Message box
+─────────────────────────────────────*/
+message {
+    background-color: @bg-overlay;
+    border-radius:    10px;
+    margin:           0px 0px 10px 0px;
+    padding:          8px 12px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @fg-muted;
+}
+
+/*─────────────────────────────────────
+  Mode switcher (sidebar)
+─────────────────────────────────────*/
+mode-switcher {
+    background-color: transparent;
+    spacing:          6px;
+    padding:          0px 0px 14px 0px;
+}
+
+button {
+    background-color: @bg-overlay;
+    border:           1px solid;
+    border-color:     rgba(255, 255, 255, 0.06);
+    border-radius:    9px;
+    padding:          7px 16px;
+    text-color:       @fg-muted;
+    cursor:           pointer;
+}
+
+button selected {
+    background-color: rgba(130, 170, 255, 0.18);
+    border-color:     @border-col;
+    text-color:       @accent;
+}
