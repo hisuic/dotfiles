@@ -1,0 +1,6 @@
+[Unit]
+Description=Battery low notification (mako sticky)
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/battery-low-notify
