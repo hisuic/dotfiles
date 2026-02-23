@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "hyprland/mode", "custom/clipboard", "group/spotify"],
+	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "custom/clipboard", "group/spotify"],
 	"modules-center": ["clock"],
 	"modules-right": ["custom/recorder", "network", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
       "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
@@ -43,8 +43,21 @@
       "on-click": "mpc -q pause && mpc -q next && mpc -q start"
     },
     "hyprland/workspaces": {
-      "format": "",
-      "on-click": "activate"
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "0",
+        "default": "〇"
+      }
     },
 	"pulseaudio": {
 		"tooltip": false,
