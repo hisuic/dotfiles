@@ -5,7 +5,7 @@ if ! cliphist list | head -n 1 | grep -q .; then
   exit 0
 fi
 
-selection="$(cliphist list | wofi --dmenu --prompt "Clipboard")"
+selection="$(cliphist list | rofi -dmenu -p "Clipboard")"
 [ -z "$selection" ] && exit 0
 
 printf '%s' "$selection" | cliphist decode | wl-copy
