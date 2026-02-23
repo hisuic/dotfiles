@@ -64,7 +64,7 @@
     "custom/clipboard": {
         "format": "󰅍",
         "tooltip": false,
-        "on-click": "~/bin/wofi-clipboard/main.sh",
+        "on-click": "~/.local/bin/clipboard-list",
     },
 	"network": {
 		"tooltip": false,
