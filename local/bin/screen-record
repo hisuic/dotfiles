@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PIDFILE="/tmp/wf-recorder.pid"
+OUTFILE_META="/tmp/wf-recorder.outfile"
+
+OUTDIR="${HOME}/Videos/recordings"
+mkdir -p "$OUTDIR"
+
+start_recording() {
+  local outfile="${OUTDIR}/record-$(date +%s).mp4"
+
+  wf-recorder -f "$outfile" &
+  local pid=$!
+
+  echo "$pid" > "$PIDFILE"
+  echo "$outfile" > "$OUTFILE_META"
+
+  # notify-send "録画開始" "$outfile"
+}
+
+stop_recording() {
+  # メタ情報が無い/壊れてる場合は諦めずに掃除
+  if [[ ! -f "$PIDFILE" ]]; then
+    notify-send "録画停止" "PIDファイルが見つかりません"
+    exit 1
+  fi
+
+  local pid
+  pid="$(cat "$PIDFILE")"
+
+  local outfile="(不明)"
+  if [[ -f "$OUTFILE_META" ]]; then
+    outfile="$(cat "$OUTFILE_META")"
+  fi
+
+  # PID が生きてるか確認
+  if ! kill -0 "$pid" 2>/dev/null; then
+    rm -f "$PIDFILE" "$OUTFILE_META"
+    notify-send "録画停止" "録画プロセスが見つかりませんでした（掃除しました）"
+    exit 0
+  fi
+
+  # まずは Ctrl+C 相当で綺麗に終わらせる
+  kill -INT "$pid" 2>/dev/null || true
+
+  # 少し待つ（wf-recorderがファイルをフラッシュする時間）
+  for _ in {1..20}; do
+    if ! kill -0 "$pid" 2>/dev/null; then
+      rm -f "$PIDFILE" "$OUTFILE_META"
+      notify-send "録画停止" "${outfile} に保存されました"
+      exit 0
+    fi
+    sleep 0.1
+  done
+
+  # まだ生きてたら強めに止める
+  kill -TERM "$pid" 2>/dev/null || true
+  sleep 0.2
+
+  rm -f "$PIDFILE" "$OUTFILE_META"
+  notify-send "録画停止" "${outfile}（強制終了）"
+}
+
+if [[ -f "$PIDFILE" ]]; then
+  stop_recording
+else
+  start_recording
+fi
