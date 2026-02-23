@@ -1,8 +1,8 @@
 window {
   margin: 0px;
-  border: 2px solid rgba(255,255,255,0.12);
+  border: none;
   border-radius: 18px;
-  background-color: rgba(20, 20, 26, 0.85);
+  background-color: rgba(20, 20, 26, 0.75);
 }
 
 #outer-box {
