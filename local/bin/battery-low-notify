@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+THRESHOLD_20=20
+THRESHOLD_10=10
+THRESHOLD_5=5
+
+STAMP_DIR="${XDG_RUNTIME_DIR:-/tmp}/battery-watch"
+mkdir -p "$STAMP_DIR"
+
+STAMP_20="$STAMP_DIR/notified_20"
+STAMP_10="$STAMP_DIR/notified_10"
+STAMP_5="$STAMP_DIR/notified_5"
+
+BAT="$(upower -e | grep -m1 -E '/battery_BAT[0-9]+' || true)"
+[ -n "$BAT" ] || exit 0
+
+INFO="$(upower -i "$BAT")"
+PCT="$(printf '%s\n' "$INFO" | awk -F': *' '/percentage/ {gsub(/%/,"",$2); print $2}')"
+STATE="$(printf '%s\n' "$INFO" | awk -F': *' '/state/ {print $2}')"
+
+# 放電中のみ対象（充電中/満充電なら何もしない）
+[[ "$STATE" != "discharging" ]] && exit 0
+
+# PCT が数値でなければスキップ（upower が "unknown" 等を返すケースや空の場合）
+[[ "$PCT" =~ ^[0-9]+$ ]] || exit 0
+
+# 回復したら段階ごとに再通知できるようにリセット
+if (( PCT > THRESHOLD_20 )); then rm -f "$STAMP_20"; fi
+if (( PCT > THRESHOLD_10 )); then rm -f "$STAMP_10"; fi
+if (( PCT > THRESHOLD_5 ));  then rm -f "$STAMP_5";  fi
+
+# 5%以下: 1回だけ通知
+if (( PCT <= THRESHOLD_5 )) && [[ ! -f "$STAMP_5" ]]; then
+  touch "$STAMP_5"
+  notify-send -a "battery-watch" -u critical -t 0 \
+    "Battery Critical (${PCT}%)" \
+    "Battery is below 5%. Plug in the charger immediately."
+  exit 0
+fi
+
+# 10%以下: 1回だけ通知
+if (( PCT <= THRESHOLD_10 )) && [[ ! -f "$STAMP_10" ]]; then
+  touch "$STAMP_10"
+  notify-send -a "battery-watch" -u critical -t 0 \
+    "Battery Low (${PCT}%)" \
+    "Battery is below 10%. Please plug in the charger soon."
+  exit 0
+fi
+
+# 20%以下: 1回だけ通知
+if (( PCT <= THRESHOLD_20 )) && [[ ! -f "$STAMP_20" ]]; then
+  touch "$STAMP_20"
+  notify-send -a "battery-watch" -u normal -t 0 \
+    "Battery Notice (${PCT}%)" \
+    "Battery is below 20%."
+fi
