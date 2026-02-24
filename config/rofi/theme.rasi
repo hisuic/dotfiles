@@ -1,16 +1,19 @@
 /**
  * Modern Glass Theme for Rofi
- * Glassmorphism design with semi-transparent background (opacity ~0.7)
+ * Glassmorphism design with semi-transparent background
  *
  * Blur requires compositor support:
- *   - Hyprland: decoration.blur.enabled = true; windowrulev2 = blur, class:^(rofi)$
+ *   - Hyprland: decoration.blur.enabled = true; decoration.blur.size / passes で強度調整
+ *               windowrulev2 = blur, class:^(rofi)$
  *   - picom:    blur-method = "dual_kawase"; blur-background = true;
+ *               blur-strength / blur-kern で強度調整
  */
 
 * {
     /* Base palette */
-    bg-base:    rgba(10, 10, 22, 0.70);
-    bg-surface: rgba(22, 22, 44, 0.75);
+    /* Transparency knob: 値を下げるほど透過が強くなる (目安 0.50-0.85) */
+    bg-base:    rgba(10, 10, 22, 0.62);
+    bg-surface: rgba(22, 22, 44, 0.68);
     bg-overlay: rgba(255, 255, 255, 0.05);
     bg-hover:   rgba(130, 170, 255, 0.16);
     bg-select:  rgba(130, 170, 255, 0.22);
