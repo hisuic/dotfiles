@@ -5,7 +5,7 @@
 	"modules-right": ["custom/recorder", "network", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
       "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
       "format": " {elapsedTime:%M:%S}",
-      "format-disconnected": "⚠  Disconnected",
+      "format-disconnected": "󱛅 ",
       "format-stopped": " Not Playing",
       "on-click": "mpc toggle",
       "state-icons": {
@@ -84,7 +84,7 @@
         "format": "⚠  Disabled",
         "format-wifi": " ",
         "format-ethernet": "  Wired",
-        "format-disconnected": "⚠  Disconnected",
+        "format-disconnected": "󱛅 ",
         "on-click": "nm-connection-editor"
 	},
     "temperature": {
