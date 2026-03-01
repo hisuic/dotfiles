@@ -101,7 +101,7 @@
 	},
     "clock": {
         "tooltip": false,
-        "format": "  {}"
+        "format": "  {:%Y-%m-%d %H:%M}",
     },
     "battery": {
         "tooltip": false,
