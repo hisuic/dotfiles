@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+hyprctl dispatch togglefloating active
+
+sleep 0.03
+
+if hyprctl activewindow -j | grep -q '"floating": true'; then
+    hyprctl --batch "dispatch resizeactive exact 90% 90%; dispatch centerwindow 1"
+fi
