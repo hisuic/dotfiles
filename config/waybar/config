@@ -56,7 +56,7 @@
         "8": "8",
         "9": "9",
         "10": "0",
-        "default": "〇"
+        "default": "󰣇"
       }
     },
 	"pulseaudio": {
@@ -139,7 +139,7 @@
       ]
     },
     "custom/spotify-text": {
-        "exec": "sh -lc 'playerctl -p spotify metadata --format \"{{ artist }} - {{ title }}\" 2>/dev/null || echo \"\"'",
+        "exec": "sh -lc 'text=$(playerctl -p spotify metadata --format \"{{ artist }} - {{ title }}\" 2>/dev/null) || { echo \"\"; exit 0; }; [ ${#text} -gt 30 ] && printf \"%.27s󰇘\\n\" \"$text\" || printf \"%s\\n\" \"$text\"'",
         "interval": 1,
         "tooltip": true,
         "escape": true
