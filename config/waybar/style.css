@@ -27,6 +27,7 @@ window#waybar.hidden {
 #clock,
 #mpd,
 #network,
+#custom-bluetooth,
 #pulseaudio,
 #temperature,
 #cpu,
