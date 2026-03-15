@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+json_escape() {
+    local value=$1
+    value=${value//\\/\\\\}
+    value=${value//\"/\\\"}
+    value=${value//$'\n'/\\n}
+    value=${value//$'\r'/}
+    printf '%s' "$value"
+}
+
+if ! command -v bluetoothctl >/dev/null 2>&1; then
+    echo '{"text":"","class":"unsupported","tooltip":"bluetoothctl not found"}'
+    exit 0
+fi
+
+connected_devices=$(bluetoothctl devices Connected 2>/dev/null | sed 's/^Device [^ ]* //')
+
+if [ -n "$connected_devices" ]; then
+    tooltip=$(json_escape "$connected_devices")
+    printf '{"text":"","class":"connected","tooltip":"%s"}\n' "$tooltip"
+else
+    echo '{"text":"󰂲","class":"disconnected","tooltip":"No connected devices"}'
+fi

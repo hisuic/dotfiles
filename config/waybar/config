@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "custom/clipboard", "group/spotify"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/recorder", "network", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
+	"modules-right": ["custom/recorder", "network", "custom/bluetooth", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
       "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
       "format": " {elapsedTime:%M:%S}",
       "format-disconnected": "󱛅 ",
@@ -65,7 +65,8 @@
 		"format": "{icon} {volume}%",
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
-		}
+		},
+		"interval": 5
 	},
     "custom/recorder": {
         "exec": "[ -f /tmp/wf-recorder.pid ] && echo '{\"text\":\"⏺ REC\",\"class\":\"recording\"}' || echo '{\"text\":\"\"}'",
@@ -87,6 +88,13 @@
         "format-disconnected": "󱛅 ",
         "on-click": "nm-connection-editor"
 	},
+    "custom/bluetooth": {
+        "exec": "/home/hisui/.config/waybar/scripts/bluetooth-monitor",
+        "return-type": "json",
+        "tail": true,
+        "tooltip": true,
+        "on-click": "blueman-manager"
+    },
     "temperature": {
         "tooltip": false,
         "format": " {}°C"

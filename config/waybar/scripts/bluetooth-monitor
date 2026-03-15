@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -u
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+status_script="$script_dir/bluetooth-status"
+last_output=""
+
+print_status() {
+    local output
+    output=$("$status_script")
+
+    if [ "$output" != "$last_output" ]; then
+        printf '%s\n' "$output"
+        last_output=$output
+    fi
+}
+
+print_status
+
+while true; do
+    dbus-monitor --system \
+        "type='signal',sender='org.bluez',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',arg0='org.bluez.Device1'" \
+        2>/dev/null | while IFS= read -r line; do
+        case "$line" in
+            *'string "Connected"'*)
+                print_status
+                ;;
+        esac
+    done
+
+    sleep 1
+done
