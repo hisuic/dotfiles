@@ -132,10 +132,10 @@
     "group/spotify": {
       "orientation": "horizontal",
       "modules": [
-        "custom/spotify-text",
         "custom/spotify-prev",
         "custom/spotify-play",
-        "custom/spotify-next"
+        "custom/spotify-next",
+        "custom/spotify-text"
       ]
     },
     "custom/spotify-text": {
