@@ -44,7 +44,7 @@ window {
     border:           1px solid;
     border-color:     @border-col;
     border-radius:    20px;
-    width:            660px;
+    width:            60%;
     padding:          0px;
     location:         center;
     anchor:           center;
