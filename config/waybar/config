@@ -139,8 +139,9 @@
       ]
     },
     "custom/spotify-text": {
-        "exec": "sh -lc 'text=$(playerctl -p spotify metadata --format \"{{ artist }} - {{ title }}\" 2>/dev/null) || { echo \"\"; exit 0; }; [ ${#text} -gt 30 ] && printf \"%.27s󰇘\\n\" \"$text\" || printf \"%s\\n\" \"$text\"'",
+        "exec": "sh -lc 'full=$(playerctl -p spotify metadata --format \"{{ artist }} - {{ title }}\" 2>/dev/null) || { printf \"{\\\"text\\\":\\\"\\\",\\\"tooltip\\\":\\\"\\\"}\\n\"; exit 0; }; short=\"$full\"; [ ${#full} -gt 30 ] && short=$(printf \"%.27s󰇘\" \"$full\"); FULL=\"$full\" SHORT=\"$short\" python3 -c \"import json, os; print(json.dumps({\\\"text\\\": os.environ[\\\"SHORT\\\"], \\\"tooltip\\\": os.environ[\\\"FULL\\\"]}, ensure_ascii=False))\"'",
         "interval": 1,
+        "return-type": "json",
         "tooltip": true,
         "escape": true
     },
