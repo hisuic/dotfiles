@@ -30,26 +30,6 @@ alias vv='vim .'
 alias V='nvim'
 alias VV='nvim .'
 
-# ls aliases
-# alias l='ls -CF'
-# alias ll='ls -alF'
-# alias la='ls -A'
-# alias lla='ls -la'
-
-# exa settings
-# alias ls='exa --icons'
-# alias l='exa --icons'
-# alias la='exa -a --icons'
-# alias ll='exa -l --icons'
-# alias lla='exa -a -l --icons'
-
-# eza settings
-alias ls='eza --icons'
-alias l='eza --icons'
-alias la='eza -a --icons'
-alias ll='eza -l --icons'
-alias lla='eza -a -l --icons'
-
 alias s=''
 
 # Run sl command forever
