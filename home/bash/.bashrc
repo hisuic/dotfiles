@@ -5,7 +5,15 @@
 #  \___|_  /|__/____  >____/|__/____  >  |___  (____  /____  >___|  /__|    \___  > #
 #        \/         \/              \/       \/     \/     \/     \/            \/  #
 
+# Load .bash_aliases
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
 # Load bash common settings
 if [ -f ~/.bashcommonrc ]; then
   . ~/.bashcommonrc
 fi
+
+# Config file location
+export XDG_CONFIG_HOME="$HOME/.config"
