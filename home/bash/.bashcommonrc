@@ -54,7 +54,7 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
-#------ Default wsl setting ------#
+#------ Default WSL Prompt ------#
 #if [ "$color_prompt" = yes ]; then
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #else
@@ -62,13 +62,13 @@ fi
 #fi
 #unset color_prompt force_color_prompt
 
-#------ Setting from Parrot ------#
+#------ Default Parrot Prompt ------#
 if [ "$color_prompt" = yes ]; then
   # PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;37m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]" # Parrot default
   #PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;37m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
   PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;37m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo ' \[\033[0;39m\]\u\[\033[01;33m\] '; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\] >>\[\e[0m\] "
 else
-  # PS1='┌──[\u@\h]─[\w]\n└──╼ \$ ' # Parrot default
+  #PS1='┌──[\u@\h]─[\w]\n└──╼ \$ ' # Parrot default
   #PS1='┌──[\u@\h]─[\w]\n└──╼  >> '
   PS1='┌──[ \u ]─[\w]\n└──╼  >> '
 fi
@@ -83,7 +83,7 @@ fi
 #;;
 #esac
 
-#------ Setting from Parrot ------#
+#------ Default Parrot Prompt ------#
 case "$TERM" in
 xterm* | rxvt*)
   # PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;31m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]" # Parrot default
@@ -140,13 +140,8 @@ function hex-decode() {
 function rot13() {
   echo "$@" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 }
-#---------------------------------#
-#---------------------------------#
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+#---------------------------------#
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -168,17 +163,8 @@ function rot13() {
 #    figlet -f smblock "Good Afternoon" | lolcat
 #fi
 
-# Load .bash_aliases
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-# Define mkcd command
 # Make directory and move into the directory at the same time
 mkcd() {
   mkdir "$1"
   cd "$1"
 }
-
-# Config file location
-export XDG_CONFIG_HOME="$HOME/.config"
