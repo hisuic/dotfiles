@@ -11,7 +11,7 @@ ________   ______________________________.___.____     ___________ _________
 
 # Requirements
 
-## Basic system requirements
+## System Overview
 
 | Item | Name |
 | -------------- | --------------- |
@@ -39,7 +39,7 @@ Get my Nvim config at [here](https://github.com/hisuic/nvim).
 Get my wallpaper collection at [here](https://github.com/hisuic/walls).
 
 ## Prompt Theme Engine
-I use [Oh My Posh](https://ohmyposh.dev/). My config is available at 'assets/poshthemes/hisuic.omp.json'.
+I use [Oh My Posh](https://ohmyposh.dev/). My config is available at `assets/poshthemes/hisuic.omp.json`.
 
 ## hspool(Optional)
 Awesome pocket command dictionary on wayland.
@@ -51,8 +51,6 @@ Get hspool [here](https://github.com/hisuic/hspool).
 
 
 # Screenshots
-
----
 
 ## Hyprland Setup
 ![Image](https://github.com/user-attachments/assets/d52b1005-2a74-4a51-8c75-c9adc516a289)
