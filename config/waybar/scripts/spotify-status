@@ -8,7 +8,7 @@ import threading
 import time
 
 
-MAX_LENGTH = 30
+MAX_LENGTH = 20
 PAUSE_SECONDS = 4
 SCROLL_INTERVAL = 0.35
 SCROLL_GAP = "   "
