@@ -1,37 +1,40 @@
 #!/usr/bin/env python3
 
 import json
+import queue
 import subprocess
 import sys
+import threading
 import time
 
 
 MAX_LENGTH = 30
-ELLIPSIS = "󰇘"
+PAUSE_SECONDS = 4
+SCROLL_INTERVAL = 0.35
+SCROLL_GAP = "   "
 PLAYER = "spotify"
 
 
 def build_payload(text="", tooltip=""):
-    short = text
-    if len(short) > MAX_LENGTH:
-        short = short[: MAX_LENGTH - 1] + ELLIPSIS
-
     return json.dumps(
         {
-            "text": short,
+            "text": text,
             "tooltip": tooltip or text,
         },
         ensure_ascii=False,
     )
 
 
-def print_payload(text="", tooltip=""):
-    print(build_payload(text, tooltip), flush=True)
+def print_payload(text="", tooltip="", last_payload=None):
+    payload = build_payload(text, tooltip)
+    if payload != last_payload:
+        print(payload, flush=True)
+        return payload
+
+    return last_payload
 
 
-def main():
-    print_payload()
-
+def watch_metadata(updates):
     command = [
         "playerctl",
         "--player",
@@ -52,16 +55,82 @@ def main():
                 bufsize=1,
             ) as process:
                 for line in process.stdout or []:
-                    text = line.strip()
-                    print_payload(text, text)
+                    updates.put(line.strip())
 
                 process.wait()
         except FileNotFoundError:
-            print_payload()
-            return 0
+            updates.put("")
+            return
 
-        print_payload()
+        updates.put("")
         time.sleep(1)
+
+
+def render_window(text, offset):
+    if len(text) <= MAX_LENGTH:
+        return text
+
+    scroll_text = text + SCROLL_GAP
+    repeated = scroll_text + scroll_text
+    return repeated[offset : offset + MAX_LENGTH]
+
+
+def main():
+    updates = queue.Queue()
+    watcher = threading.Thread(target=watch_metadata, args=(updates,), daemon=True)
+    watcher.start()
+
+    current_text = ""
+    offset = 0
+    pause_until = 0
+    last_payload = None
+
+    last_payload = print_payload(last_payload=last_payload)
+
+    while True:
+        is_long = len(current_text) > MAX_LENGTH
+        now = time.monotonic()
+
+        if not current_text or not is_long:
+            timeout = None
+        elif offset == 0 and now < pause_until:
+            timeout = pause_until - now
+        else:
+            timeout = SCROLL_INTERVAL
+
+        try:
+            current_text = updates.get(timeout=timeout)
+            offset = 0
+            pause_until = time.monotonic() + PAUSE_SECONDS
+            last_payload = print_payload(
+                render_window(current_text, offset),
+                current_text,
+                last_payload,
+            )
+            continue
+        except queue.Empty:
+            pass
+
+        if not current_text:
+            last_payload = print_payload(last_payload=last_payload)
+            continue
+
+        if len(current_text) <= MAX_LENGTH:
+            last_payload = print_payload(current_text, current_text, last_payload)
+            continue
+
+        if offset == 0 and time.monotonic() < pause_until:
+            continue
+
+        offset = (offset + 1) % len(current_text + SCROLL_GAP)
+        if offset == 0:
+            pause_until = time.monotonic() + PAUSE_SECONDS
+
+        last_payload = print_payload(
+            render_window(current_text, offset),
+            current_text,
+            last_payload,
+        )
 
 
 if __name__ == "__main__":
