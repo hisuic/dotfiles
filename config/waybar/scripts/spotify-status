@@ -12,6 +12,7 @@ MAX_LENGTH = 30
 PAUSE_SECONDS = 4
 SCROLL_INTERVAL = 0.35
 SCROLL_GAP = "   "
+REFRESH_DELAY = 0.2
 PLAYER = "spotify"
 
 
@@ -34,6 +35,34 @@ def print_payload(text="", tooltip="", last_payload=None):
     return last_payload
 
 
+def get_current_metadata():
+    command = [
+        "playerctl",
+        "--player",
+        PLAYER,
+        "metadata",
+        "--format",
+        "{{ artist }} - {{ title }}",
+    ]
+
+    try:
+        result = subprocess.run(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            timeout=1,
+            check=False,
+        )
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return ""
+
+    if result.returncode != 0:
+        return ""
+
+    return result.stdout.strip()
+
+
 def watch_metadata(updates):
     command = [
         "playerctl",
@@ -54,15 +83,15 @@ def watch_metadata(updates):
                 text=True,
                 bufsize=1,
             ) as process:
-                for line in process.stdout or []:
-                    updates.put(line.strip())
+                for _line in process.stdout or []:
+                    updates.put(None)
 
                 process.wait()
         except FileNotFoundError:
-            updates.put("")
+            updates.put(None)
             return
 
-        updates.put("")
+        updates.put(None)
         time.sleep(1)
 
 
@@ -85,7 +114,13 @@ def main():
     pause_until = 0
     last_payload = None
 
-    last_payload = print_payload(last_payload=last_payload)
+    current_text = get_current_metadata()
+    pause_until = time.monotonic() + PAUSE_SECONDS
+    last_payload = print_payload(
+        render_window(current_text, offset),
+        current_text,
+        last_payload,
+    )
 
     while True:
         is_long = len(current_text) > MAX_LENGTH
@@ -99,7 +134,15 @@ def main():
             timeout = SCROLL_INTERVAL
 
         try:
-            current_text = updates.get(timeout=timeout)
+            updates.get(timeout=timeout)
+            time.sleep(REFRESH_DELAY)
+            while True:
+                try:
+                    updates.get_nowait()
+                except queue.Empty:
+                    break
+
+            current_text = get_current_metadata()
             offset = 0
             pause_until = time.monotonic() + PAUSE_SECONDS
             last_payload = print_payload(
