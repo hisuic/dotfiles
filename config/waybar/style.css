@@ -194,6 +194,18 @@ window#waybar.hidden {
     margin-right: 6px;
 }
 
+/* ── Bluetooth ───────────────────────────── */
+
+#custom-bluetooth.connected {
+    color: rgba(195, 255, 215, 0.97);
+}
+
+#custom-bluetooth.disconnected,
+#custom-bluetooth.disabled,
+#custom-bluetooth.unsupported {
+    color: rgba(255, 255, 255, 0.42);
+}
+
 /* ── Spotify Group ───────────────────────── */
 
 #group-spotify {

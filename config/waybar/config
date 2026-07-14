@@ -2,12 +2,14 @@
 	"layer": "top",
 	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "custom/clipboard", "group/spotify"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/recorder", "network", "custom/bluetooth", "pulseaudio", "temperature", "cpu", "memory", "battery"], "mpd": { "tooltip": true,
+	"modules-right": ["custom/recorder", "network", "custom/bluetooth", "pulseaudio", "cpu", "memory"],
+	"mpd": {
+      "tooltip": true,
       "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
       "format": " {elapsedTime:%M:%S}",
       "format-disconnected": "󱛅 ",
       "format-stopped": " Not Playing",
-      "on-click": "mpc toggle",
+      "on-click": "sh -lc 'command -v mpc >/dev/null 2>&1 && mpc toggle'",
       "state-icons": {
         "playing": "",
         "paused": ""
@@ -18,8 +20,7 @@
       "format-disconnected": "",
       "format-paused": "",
       "format-stopped": "",
-      // Commands to execute on events
-      "on-click": "mpc -q pause && mpc -q prev && mpc -q start"
+      "on-click": "sh -lc 'command -v mpc >/dev/null 2>&1 && mpc -q pause && mpc -q prev && mpc -q start'"
     },
     "mpd#3": {
       "interval": 1,
@@ -31,16 +32,14 @@
         "paused": "",
         "playing": ""
       },
-      // Commands to execute on events
-      "on-click": "mpc toggle"
+      "on-click": "sh -lc 'command -v mpc >/dev/null 2>&1 && mpc toggle'"
     },
     "mpd#4": {
       "format": "",
       "format-disconnected": "",
       "format-paused": "",
       "format-stopped": "",
-      // Commands to execute on events
-      "on-click": "mpc -q pause && mpc -q next && mpc -q start"
+      "on-click": "sh -lc 'command -v mpc >/dev/null 2>&1 && mpc -q pause && mpc -q next && mpc -q start'"
     },
     "hyprland/workspaces": {
       "format": "{icon}",
@@ -78,7 +77,7 @@
     "custom/clipboard": {
         "format": "󰅍",
         "tooltip": false,
-        "on-click": "~/.local/bin/clipboard-list",
+        "on-click": "~/.local/bin/clipboard-list"
     },
 	"network": {
 		"tooltip": false,
@@ -86,14 +85,14 @@
         "format-wifi": " ",
         "format-ethernet": "  Wired",
         "format-disconnected": "󱛅 ",
-        "on-click": "nm-connection-editor"
+        "on-click": "sh -lc 'if command -v nm-connection-editor >/dev/null 2>&1; then nm-connection-editor; else kitty nmtui; fi'"
 	},
     "custom/bluetooth": {
         "exec": "/home/hisui/.config/waybar/scripts/bluetooth-monitor",
         "return-type": "json",
         "tail": true,
         "tooltip": true,
-        "on-click": "blueman-manager"
+        "on-click": "sh -lc 'if command -v blueman-manager >/dev/null 2>&1; then blueman-manager; else kitty bluetoothctl; fi'"
     },
     "temperature": {
         "tooltip": false,
@@ -109,7 +108,7 @@
 	},
     "clock": {
         "tooltip": false,
-        "format": "  {:%Y-%m-%d %H:%M}",
+        "format": "  {:%Y-%m-%d %H:%M}"
     },
     "battery": {
         "tooltip": false,
@@ -117,16 +116,16 @@
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": "󰂄 {capacity}%",
         "format-icons": [
-            "󰁺",  // 0–10%
-            "󰁻",  // 10–20%
-            "󰁼",  // 20–30%
-            "󰁽",  // 30–40%
-            "󰁾",  // 40–50%
-            "󰁿",  // 50–60%
-            "󰂀",  // 60–70%
-            "󰂁",  // 70–80%
-            "󰂂",  // 80–90%
-            "󰁹"   // 90–100%
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
         ]
     },
     "group/spotify": {
