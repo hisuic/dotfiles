@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+
+import json
+import subprocess
+import sys
+import time
+
+
+MAX_LENGTH = 30
+ELLIPSIS = "󰇘"
+PLAYER = "spotify"
+
+
+def build_payload(text="", tooltip=""):
+    short = text
+    if len(short) > MAX_LENGTH:
+        short = short[: MAX_LENGTH - 1] + ELLIPSIS
+
+    return json.dumps(
+        {
+            "text": short,
+            "tooltip": tooltip or text,
+        },
+        ensure_ascii=False,
+    )
+
+
+def print_payload(text="", tooltip=""):
+    print(build_payload(text, tooltip), flush=True)
+
+
+def main():
+    print_payload()
+
+    command = [
+        "playerctl",
+        "--player",
+        PLAYER,
+        "--follow",
+        "metadata",
+        "--format",
+        "{{ artist }} - {{ title }}",
+    ]
+
+    while True:
+        try:
+            with subprocess.Popen(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+                bufsize=1,
+            ) as process:
+                for line in process.stdout or []:
+                    text = line.strip()
+                    print_payload(text, text)
+
+                process.wait()
+        except FileNotFoundError:
+            print_payload()
+            return 0
+
+        print_payload()
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
