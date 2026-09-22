@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["hyprland/workspaces", "mpd#2", "mpd#3", "mpd#4", "mpd", "custom/clipboard", "group/spotify"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/recorder", "network", "custom/bluetooth", "pulseaudio", "cpu", "memory"],
+	"modules-right": ["custom/recorder", "network", "custom/bluetooth", "pulseaudio", "cpu", "memory", "battery"],
 	"mpd": {
       "tooltip": true,
       "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
