@@ -20,10 +20,10 @@ print_status
 
 while true; do
     dbus-monitor --system \
-        "type='signal',sender='org.bluez',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',arg0='org.bluez.Device1'" \
+        "type='signal',sender='org.bluez',interface='org.freedesktop.DBus.Properties',member='PropertiesChanged'" \
         2>/dev/null | while IFS= read -r line; do
         case "$line" in
-            *'string "Connected"'*)
+            *'string "Connected"'*|*'string "Powered"'*)
                 print_status
                 ;;
         esac

@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -u
+
+last_icon=""
+
+print_status() {
+    local status=${1:-}
+    local icon
+
+    if [ "$status" = "Playing" ]; then
+        icon="󰏤"
+    else
+        icon="󰐊"
+    fi
+
+    if [ "$icon" != "$last_icon" ]; then
+        printf '%s\n' "$icon"
+        last_icon=$icon
+    fi
+}
+
+print_status "$(playerctl --player spotify status 2>/dev/null || true)"
+
+while true; do
+    if ! command -v playerctl >/dev/null 2>&1; then
+        print_status
+        sleep 5
+        continue
+    fi
+
+    while IFS= read -r status; do
+        print_status "$status"
+    done < <(playerctl --player spotify --follow status 2>/dev/null)
+
+    print_status
+    sleep 1
+done

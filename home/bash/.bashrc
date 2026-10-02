@@ -37,3 +37,17 @@ alias l='eza --icons'
 alias la='eza -a --icons'
 alias ll='eza -l --icons'
 alias lla='eza -a -l --icons'
+
+# Reject crontab -r
+crontab() {
+  local arg
+  for arg in "$@"; do
+    if [[ "$arg" == "-r" ]]; then
+      echo "crontab -r rejected for safety reasons." >&2
+      echo "If you really want to remove it, run: /usr/bin/crontab -r" >&2
+      return 2
+    fi
+  done
+
+  /usr/bin/crontab "$@"
+}

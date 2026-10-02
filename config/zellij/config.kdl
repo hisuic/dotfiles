@@ -276,10 +276,28 @@ plugins {
 //     }
 // }
 
+// Soft lavender accents on a deep aubergine background.
+themes {
+    pale-purple {
+        fg 230 223 239
+        // Muted plum, bright enough to make dragged selections distinct.
+        bg 92 74 112
+        black 46 39 58
+        red 230 147 159
+        green 166 205 180
+        yellow 229 202 145
+        blue 158 183 224
+        magenta 207 180 232
+        orange 224 174 139
+        cyan 154 204 207
+        white 244 240 248
+    }
+}
+
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-// theme "default"
+theme "pale-purple"
 
 // The name of the default layout to load on startup
 // Default: "default"

@@ -14,6 +14,11 @@ if ! command -v bluetoothctl >/dev/null 2>&1; then
     exit 0
 fi
 
+if ! bluetoothctl show 2>/dev/null | grep -q 'Powered: yes'; then
+    echo '{"text":"󰂲","class":"disabled","tooltip":"Bluetooth powered off"}'
+    exit 0
+fi
+
 connected_devices=$(bluetoothctl devices Connected 2>/dev/null | sed 's/^Device [^ ]* //')
 
 if [ -n "$connected_devices" ]; then
