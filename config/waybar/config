@@ -142,24 +142,30 @@
         "exec": "/home/hisui/.config/waybar/scripts/spotify-status",
         "return-type": "json",
         "tail": true,
+        "hide-empty-text": true,
         "tooltip": true,
         "escape": true
     },
     "custom/spotify-prev": {
         "exec": "printf '󰒮\\n'",
-        "interval": "once",
+        "interval": 1,
+        "exec-if": "playerctl --player spotify status >/dev/null 2>&1",
+        "hide-empty-text": true,
         "on-click": "playerctl -p spotify previous",
         "tooltip": false
     },
     "custom/spotify-play": {
         "exec": "/home/hisui/.config/waybar/scripts/spotify-play-status",
         "tail": true,
+        "hide-empty-text": true,
         "on-click": "playerctl -p spotify play-pause",
         "tooltip": false
     },
     "custom/spotify-next": {
         "exec": "printf '󰒭\\n'",
-        "interval": "once",
+        "interval": 1,
+        "exec-if": "playerctl --player spotify status >/dev/null 2>&1",
+        "hide-empty-text": true,
         "on-click": "playerctl -p spotify next",
         "tooltip": false
     }
