@@ -1,9 +1,28 @@
 #!/usr/bin/env bash
 
-hyprctl dispatch togglefloating active
+exec hyprctl eval '
+local window = hl.get_active_window()
+if not window then return end
 
-sleep 0.03
+hl.dispatch(hl.dsp.window.float({ window = window }))
+if not window.floating then return end
 
-if hyprctl activewindow -j | grep -q '"floating": true'; then
-    hyprctl --batch "dispatch resizeactive exact 90% 90%; dispatch centerwindow 1"
-fi
+local monitor = window.monitor
+if not monitor then return end
+
+-- Convert physical monitor pixels to logical window coordinates.
+local size = monitor.size
+local width = size.width / monitor.scale
+local height = size.height / monitor.scale
+if monitor.transform % 2 == 1 then
+    width, height = height, width
+end
+
+hl.dispatch(hl.dsp.window.resize({
+    window = window,
+    x = math.floor(width * 0.9),
+    y = math.floor(height * 0.9),
+    relative = false,
+}))
+hl.dispatch(hl.dsp.window.center({ window = window }))
+'
