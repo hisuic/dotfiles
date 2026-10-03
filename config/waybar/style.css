@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════
-   Waybar — Purple Liquid Glass
+   Waybar — Neutral Smoked Glass
+   明るい壁紙でも読める無彩色の半透明パネル
    ═══════════════════════════════════════════ */
 
 * {
@@ -12,14 +13,14 @@
 
 window#waybar {
     background: transparent;
-    color: rgba(255, 255, 255, 0.93);
+    color: rgba(255, 255, 255, 0.96);
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/* ── Purple Glass Base ───────────────────────
+/* ── Neutral Glass Base ──────────────────────
    各モジュール共通のガラスパネルスタイル
    ──────────────────────────────────────────── */
 
@@ -37,20 +38,22 @@ window#waybar.hidden {
 #group-spotify {
     margin: 6px 3px;
     padding: 5px 16px;
-    border-radius: 12px;
+    /* 2pxの枠線を含め、内側の背景は12px相当の曲率にする */
+    border-radius: 14px;
 
     background: linear-gradient(
         180deg,
-        rgba(130, 85, 205, 0.38) 0%,
-        rgba(90, 50, 160, 0.26) 100%
+        rgba(18, 18, 18, 0.62) 0%,
+        rgba(5, 5, 5, 0.52) 100%
     );
-    border: 1px solid rgba(180, 140, 255, 0.36);
+    background-clip: padding-box;
+    border: 2px solid rgba(255, 255, 255, 0.52);
     box-shadow:
-        inset 0 1px 0 rgba(215, 185, 255, 0.45),
-        inset 0 -1px 0 rgba(50, 15, 95, 0.25),
-        0 6px 24px rgba(60, 15, 115, 0.32);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.28),
+        0 2px 6px rgba(0, 0, 0, 0.32);
 
-    color: rgba(255, 255, 255, 0.93);
+    color: rgba(255, 255, 255, 0.96);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.90);
     transition: none;
 }
 
@@ -64,32 +67,32 @@ window#waybar.hidden {
 #workspaces button {
     background: transparent;
     border-radius: 8px;
-    color: rgba(255, 255, 255, 0.38);
+    color: rgba(255, 255, 255, 0.62);
     font-size: 13px;
     padding: 2px 10px;
     margin: 1px;
     min-height: 0;
     transition: none;
     box-shadow: none;
-    text-shadow: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.90);
 }
 
 #workspaces button.active,
 #workspaces button.focused,
 #workspaces button.current {
     color: rgba(255, 255, 255, 1);
-    background: rgba(190, 150, 255, 0.26);
+    background: rgba(255, 255, 255, 0.18);
     box-shadow:
-        inset 0 1px 0 rgba(220, 195, 255, 0.55),
-        0 2px 8px rgba(100, 50, 180, 0.3);
+        inset 0 1px 0 rgba(255, 255, 255, 0.24),
+        0 2px 8px rgba(0, 0, 0, 0.32);
     font-weight: bold;
 }
 
 #workspaces button:hover {
-    color: rgba(255, 255, 255, 0.72);
-    background: rgba(170, 130, 240, 0.16);
+    color: rgba(255, 255, 255, 0.90);
+    background: rgba(255, 255, 255, 0.12);
     box-shadow: none;
-    text-shadow: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.90);
     transition: none;
 }
 
@@ -105,7 +108,7 @@ window#waybar.hidden {
 
 #mpd.disconnected,
 #mpd.stopped {
-    color: rgba(255, 255, 255, 0.32);
+    color: rgba(255, 255, 255, 0.58);
 }
 
 /* ── Battery ─────────────────────────────── */
@@ -118,29 +121,27 @@ window#waybar.hidden {
 #battery.plugged {
     background: linear-gradient(
         180deg,
-        rgba(74, 222, 128, 0.30) 0%,
-        rgba(34, 170, 90, 0.18) 100%
+        rgba(45, 45, 45, 0.68) 0%,
+        rgba(15, 15, 15, 0.58) 100%
     );
-    border-color: rgba(110, 240, 160, 0.38);
+    border-color: rgba(255, 255, 255, 0.62);
     box-shadow:
-        inset 0 1px 0 rgba(160, 255, 195, 0.48),
-        inset 0 -1px 0 rgba(10, 60, 35, 0.22),
-        0 6px 22px rgba(30, 140, 80, 0.28);
-    color: rgba(195, 255, 215, 0.97);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.28),
+        0 2px 6px rgba(0, 0, 0, 0.34);
+    color: rgba(255, 255, 255, 1);
 }
 
 #battery.critical:not(.charging) {
     background: linear-gradient(
         180deg,
-        rgba(239, 68, 68, 0.34) 0%,
-        rgba(185, 28, 28, 0.22) 100%
+        rgba(70, 70, 70, 0.78) 0%,
+        rgba(20, 20, 20, 0.68) 100%
     );
-    border-color: rgba(255, 130, 130, 0.40);
+    border-color: rgba(255, 255, 255, 0.76);
     box-shadow:
-        inset 0 1px 0 rgba(255, 175, 175, 0.50),
-        inset 0 -1px 0 rgba(90, 10, 10, 0.25),
-        0 6px 22px rgba(200, 40, 40, 0.30);
-    color: rgba(255, 205, 205, 0.97);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.32),
+        0 2px 6px rgba(0, 0, 0, 0.42);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* ── Recorder ────────────────────────────── */
@@ -157,18 +158,19 @@ window#waybar.hidden {
 
 #custom-recorder.recording {
     padding: 5px 16px;
-    border-radius: 12px;
+    border-radius: 14px;
     background: linear-gradient(
         180deg,
-        rgba(239, 68, 68, 0.38) 0%,
-        rgba(185, 28, 28, 0.24) 100%
+        rgba(70, 70, 70, 0.78) 0%,
+        rgba(20, 20, 20, 0.68) 100%
     );
-    border: 1px solid rgba(255, 130, 130, 0.40);
+    background-clip: padding-box;
+    border: 2px solid rgba(255, 255, 255, 0.76);
     box-shadow:
-        inset 0 1px 0 rgba(255, 175, 175, 0.50),
-        inset 0 -1px 0 rgba(90, 10, 10, 0.25),
-        0 6px 22px rgba(200, 40, 40, 0.32);
-    color: rgba(255, 210, 210, 0.97);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.32),
+        0 2px 6px rgba(0, 0, 0, 0.42);
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.90);
     font-weight: bold;
 }
 
@@ -177,15 +179,14 @@ window#waybar.hidden {
 #temperature.critical {
     background: linear-gradient(
         180deg,
-        rgba(251, 146, 60, 0.34) 0%,
-        rgba(194, 100, 20, 0.22) 100%
+        rgba(70, 70, 70, 0.78) 0%,
+        rgba(20, 20, 20, 0.68) 100%
     );
-    border-color: rgba(255, 185, 100, 0.40);
+    border-color: rgba(255, 255, 255, 0.76);
     box-shadow:
-        inset 0 1px 0 rgba(255, 210, 150, 0.48),
-        inset 0 -1px 0 rgba(90, 40, 5, 0.22),
-        0 6px 22px rgba(200, 100, 20, 0.28);
-    color: rgba(255, 220, 175, 0.97);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.32),
+        0 2px 6px rgba(0, 0, 0, 0.42);
+    color: rgba(255, 255, 255, 1);
 }
 
 /* ── Clipboard ───────────────────────────── */
@@ -197,13 +198,13 @@ window#waybar.hidden {
 /* ── Bluetooth ───────────────────────────── */
 
 #custom-bluetooth.connected {
-    color: rgba(195, 255, 215, 0.97);
+    color: rgba(255, 255, 255, 0.96);
 }
 
 #custom-bluetooth.disconnected,
 #custom-bluetooth.disabled,
 #custom-bluetooth.unsupported {
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255, 255, 255, 0.58);
 }
 
 /* ── Spotify Group ───────────────────────── */
@@ -222,6 +223,7 @@ window#waybar.hidden {
     border: none;
     box-shadow: none;
     color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.90);
     margin: 0;
     padding: 0 8px;
     border-radius: 0;
@@ -247,15 +249,17 @@ window#waybar.Firefox #window,
 window#waybar.Navigator #window {
     margin: 6px;
     padding: 5px 16px;
-    border-radius: 12px;
+    border-radius: 14px;
     background: linear-gradient(
         180deg,
-        rgba(130, 85, 205, 0.32) 0%,
-        rgba(90, 50, 160, 0.20) 100%
+        rgba(18, 18, 18, 0.62) 0%,
+        rgba(5, 5, 5, 0.52) 100%
     );
-    border: 1px solid rgba(175, 135, 250, 0.32);
+    background-clip: padding-box;
+    border: 2px solid rgba(255, 255, 255, 0.52);
     box-shadow:
-        inset 0 1px 0 rgba(210, 180, 255, 0.40),
-        0 6px 22px rgba(60, 15, 115, 0.28);
-    color: rgba(255, 255, 255, 0.72);
+        inset 0 -1px 0 rgba(0, 0, 0, 0.28),
+        0 2px 6px rgba(0, 0, 0, 0.32);
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.90);
 }
