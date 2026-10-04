@@ -8,9 +8,25 @@ if [[ -f "$HOME/.zsh_aliases" ]]; then
   source "$HOME/.zsh_aliases"
 fi
 
-# NVM
+# NVM (lazy-load on first use)
 export NVM_DIR="$HOME/.config/nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+
+_nvm_lazy_load() {
+  unfunction nvm node npm npx corepack 2>/dev/null
+
+  if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+    source "$NVM_DIR/nvm.sh"
+  else
+    print -u2 "nvm: $NVM_DIR/nvm.sh not found"
+    return 127
+  fi
+}
+
+nvm() { _nvm_lazy_load && nvm "$@"; }
+node() { _nvm_lazy_load && node "$@"; }
+npm() { _nvm_lazy_load && npm "$@"; }
+npx() { _nvm_lazy_load && npx "$@"; }
+corepack() { _nvm_lazy_load && corepack "$@"; }
 
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config "$HOME/poshthemes/hisuic.omp.json")"
