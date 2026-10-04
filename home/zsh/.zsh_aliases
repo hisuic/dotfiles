@@ -1,0 +1,43 @@
+# General aliases
+alias sudo='sudo '
+alias q='exit'
+alias y='yazi'
+alias z='zellij'
+alias py='python3'
+alias cl='clear'
+alias s=''
+
+# eza
+alias ls='eza --icons=auto'
+alias l='eza --icons=auto'
+alias la='eza -a --icons=auto'
+alias ll='eza -l --icons=auto'
+alias lla='eza -a -l --icons=auto'
+
+# Git
+alias g='git'
+alias gm='git commit -m'
+alias gst='git status'
+alias gp='git push origin'
+alias gpm='git push origin main'
+alias gl='git pull origin'
+alias glm='git pull origin main'
+
+# Vim and Neovim
+alias v='vim'
+alias vv='vim .'
+alias V='nvim'
+alias VV='nvim .'
+
+# File manager
+alias fa='thunar .'
+
+# Run sl command forever
+alias sl8='sl_loop'
+sl_loop() {
+  while true; do
+    sl | lolcat
+    sl -l | lolcat
+    sl -F | lolcat
+  done
+}
