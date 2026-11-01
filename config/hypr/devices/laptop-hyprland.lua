@@ -9,3 +9,6 @@ hl.config({
         kb_rules = "",
     },
 })
+
+require("cosmic")
+require("hypraxis")
