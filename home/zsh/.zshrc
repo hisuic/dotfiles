@@ -30,7 +30,8 @@ compinit
 
 # Better completion menu
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# Get capital case result with lower case input, and vice versa
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # History
 HISTFILE="$HOME/.zsh_history"
