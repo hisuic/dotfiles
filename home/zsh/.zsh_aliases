@@ -5,6 +5,7 @@ alias y='yazi'
 alias z='zellij'
 alias py='python3'
 alias cl='clear'
+alias cp='cp -i'
 alias s=''
 
 # eza
